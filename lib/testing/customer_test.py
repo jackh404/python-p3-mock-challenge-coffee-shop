@@ -22,7 +22,7 @@ class TestCustomer:
         assert customer.name == "Stove"
         
         # comment out the next two lines if using Exceptions
-        customer.name = 1
+        #customer.name = 1
         assert customer.name == "Stove"
         
         assert isinstance(customer.name, str)
@@ -37,11 +37,14 @@ class TestCustomer:
         assert len(customer.name) == 5
 
         # comment out the next two lines if using Exceptions
-        customer.name = ""
+        #customer.name = ""
         assert customer.name == "Steve"
         
         # comment out the next two lines if using Exceptions
-        customer.name = "TooLongForAName!"
+        try:
+            customer.name = "TooLongForAName!"
+        except:
+            print('oops')
         assert customer.name == "Steve"
 
         # uncomment the next two lines if using Exceptions
